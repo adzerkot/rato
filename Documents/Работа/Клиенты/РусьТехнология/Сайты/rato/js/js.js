@@ -14,11 +14,16 @@
                 return false;
             });
         }
-
+        var $p60 = $('.p-60');
+        if ($p60.length > 0) {
+            $p60.append('<div class="toggle"></div>');
+            $p60.children('.toggle').click(function () {
+                $p60.toggleClass('toggle');
+            });
+        }
         var $menu_btn = $('div.navbar-toggle');
         if ($menu_btn.length > 0) {
             $menu_btn.click(function () {
-                console.log('click');
                 $('#navbar.menu').toggleClass('opened');
             });
         }
@@ -195,7 +200,7 @@
         });
 
 
-       
+
         var $slider = $('.slider');
         if ($slider.length > 0) {
             $('.slider .slider-items').carouFredSel({

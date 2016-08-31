@@ -97,7 +97,6 @@ $color_menu_border: #2ab06d;
 
 @media all {
     body{
-
         table{
 
             width: 100%;
@@ -630,7 +629,7 @@ $color_menu_border: #2ab06d;
                     text-align: left;
                     line-height: 30px;
                     margin: 0;
-                    padding: 30px 0;
+                    padding: 0 0 30px 0;
                     &.size-17{
                         font-size: 17px;
                     }
@@ -931,6 +930,8 @@ $color_menu_border: #2ab06d;
             }
         }
         .discount-description{
+
+            margin-top: 30px;
             margin-bottom: -150px;
             >.container{
                 position: relative;
@@ -1656,11 +1657,187 @@ $color_menu_border: #2ab06d;
                 background-color: $color_green;
             }
         }
+
+        #modal-form{
+            display: none;
+        }
+        &.has-modal{
+            overflow: hidden;
+            #modal-form{
+                z-index: 10;
+                display: block;
+                background-color: rgba(5,56,86,.6);
+                position: fixed;
+                overflow-y: scroll;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                .form{
+                    width: 635px;
+                    margin: 100px auto;
+                    .form-header{
+                        height: 70px;
+                        line-height: 67px;
+                        background-color: $color_orange;
+                        color: white;
+                        font-size: 21px;
+                        font-weight: bold;
+                        text-align: center;
+                        position: relative;
+                        .close{
+                            opacity: .75;
+                            position: absolute;
+                            width: 22px;
+                            height: 23px;
+                            text-indent: 101%;
+                            overflow: hidden;
+                            right: 40px;
+                            top: 25px;
+                            background: url('../images/close.png') no-repeat center center;
+                            &:hover{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .form-items{
+                        background-color: #ecedee;
+                        padding: 0 2px 40px;
+                        img{
+                            max-width: 100%;
+                        }
+                        .form-item{
+                            font-size: 18px;
+                            height: 90px;
+                            padding: 0 30px 20px;
+                            background-color: white;
+                            &:nth-last-child(-n+2){
+                                background-color: inherit;
+                            }
+                            &:first-child{
+                                padding-top: 30px;
+                                height: 120px;
+                            }
+                            &:last-child{
+                                padding-bottom: 0;
+                            }
+                            .form-control{
+                                resize: none;
+                                height: 70px;
+                                border-radius: 0;
+                                border: 1px solid $color_green;
+                                &:focus{
+                                    box-shadow: 0 0 8px rgba(44,175,109,.6);
+                                }
+                            }
+                            &.item-comment{
+                                height: 130px;
+                                padding: 0 30px 60px;
+                            }
+                            &.item-submit{
+                                text-align: center;
+                                button{
+                                    font-size: 21px;
+                                    text-transform: lowercase;
+                                    font-weight: 600;
+                                    padding: 0 2em;
+                                }
+                            }
+                            &.item-comment{
+                                height: 150px;
+                                textarea{
+                                    height: 90px;
+                                }
+                            }
+                            &.item-captcha{
+                                height: auto;
+                                margin-top: 30px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 @media (max-width: $screen-xs-max) {
     body{
+
+        &.has-modal{
+            #modal-form{
+                .form{
+                    width: 320px;
+                    margin: 30px auto;
+                    .form-header{
+                        height: 50px;
+                        line-height: 47px;
+                        background-color: $color_orange;
+                        color: white;
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-align: center;
+                        position: relative;
+                        .close{
+                            width: 15px;
+                            height: 15px;
+                            right: 20px;
+                            top: 17.5px;
+                            background-size: contain;
+                        }
+                    }
+                    .form-items{
+                        padding: 0 2px 20px;
+                        .form-item{
+                            font-size: 16px;
+                            height: 70px;
+                            padding: 0 15px 20px;
+                            background-color: white;
+                            &:nth-last-child(-n+2){
+                                background-color: inherit;
+                            }
+                            &:first-child{
+                                padding-top: 20px;
+                                height: 90px;
+                            }
+                            &:last-child{
+                                padding-bottom: 0;
+                            }
+                            .form-control{
+                                resize: none;
+                                height: 50px;
+                                border-radius: 0;
+                                border: 1px solid $color_green;
+                                &:focus{
+                                    box-shadow: 0 0 8px rgba(44,175,109,.6);
+                                }
+                            }
+                            &.item-comment{
+                                height: 110px;
+                                padding: 0 15px 20px;
+                                textarea{
+                                    height: 90px;
+                                }
+                            }
+                            &.item-submit{
+                                text-align: center;
+                                button{
+                                    font-size: 16px;
+                                    text-transform: lowercase;
+                                    font-weight: 600;
+                                    padding: 0 2em;
+                                }
+                            }
+                            &.item-captcha{
+                                height: auto;
+                                margin-top: 30px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .action-navi{
             margin-top: 20px;
             a{
@@ -1801,6 +1978,8 @@ $color_menu_border: #2ab06d;
         }
         .contacts{ 
             .cnt-item{
+                max-width: 340px;
+                margin: 0 auto;
                 border-right: none;
                 .phones{
                     margin-top: 25px;
@@ -1892,6 +2071,7 @@ $color_menu_border: #2ab06d;
             margin: 0 0 20px;
             .discount-text {
                 p{
+                    padding-top: 20px;
                     &.size-17{
                         font-size: 15px;
                         line-height: 24px;
@@ -2211,19 +2391,53 @@ $color_menu_border: #2ab06d;
                         display: none !important;
                     }
                     &.opened{
-                        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+                        background-color: $color_green;
                         display: block;
                         margin: 0 -15px;
-                        padding: 0 15px;
+                        padding: 0;
                         top: 55px;
-                        width: 100%;
+                        width: 320px;
                         .navbar-nav{
+                            margin: 0;
                             height: auto;
                             display: block;
                             float: none;
                             li{
                                 display: block;
                                 float: none;
+                                &.in-mm{
+                                    height: 35px;
+                                    text-align: center;
+                                    background-color: white;
+                                    a{
+                                        border-top: 1px solid $color_green;
+                                        /*border-bottom: 1px solid $color_green;*/
+                                        font-size: 20px;
+                                        color: $color_blue;
+                                    }
+                                    &:hover{
+                                        a{
+                                            color: white;
+                                            border-color: rgba(0,0,0,0);
+                                            border-top: 1px solid $color_green;
+                                        }
+                                        background-color: $color_blue;
+                                    }
+                                }
+                                a{
+                                    color: white;
+                                    border: 1px solid white;
+                                    border-top: none;
+                                }
+                                &:nth-child(3){
+                                    border-top: 1px solid white;
+                                }
+                                &:hover{
+                                    background-color: $color_blue;
+                                    a{
+                                        color: $color_green;
+                                    }
+                                }
                             }
                         }
                     }
@@ -2567,6 +2781,16 @@ $color_menu_border: #2ab06d;
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     body{
+
+
+        .emex{
+            a{
+                display: block;
+                height: 50px;
+                line-height: 47px;
+                font-size: 20px;
+            }
+        }
         .action-navi{
             margin-top: 20px;
             a{
@@ -2634,6 +2858,8 @@ $color_menu_border: #2ab06d;
         }
         .contacts{ 
             .cnt-item{
+                max-width: 340px;
+                margin: 0 auto;
                 border-right: none;
                 .phones{
                     margin-top: 25px;
@@ -2712,19 +2938,53 @@ $color_menu_border: #2ab06d;
                         display: none !important;
                     }
                     &.opened{
-                        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+                        background-color: $color_green;
                         display: block;
                         margin: 0 -15px;
-                        padding: 0 15px;
+                        padding: 0;
                         top: 55px;
-                        width: 100%;
+                        width: 320px;
                         .navbar-nav{
+                            margin: 0;
                             height: auto;
                             display: block;
                             float: none;
                             li{
                                 display: block;
                                 float: none;
+                                &.in-mm{
+                                    height: 35px;
+                                    text-align: center;
+                                    background-color: white;
+                                    a{
+                                        border-top: 1px solid $color_green;
+                                        /*border-bottom: 1px solid $color_green;*/
+                                        font-size: 20px;
+                                        color: $color_blue;
+                                    }
+                                    &:hover{
+                                        a{
+                                            color: white;
+                                            border-color: rgba(0,0,0,0);
+                                            border-top: 1px solid $color_green;
+                                        }
+                                        background-color: $color_blue;
+                                    }
+                                }
+                                a{
+                                    color: white;
+                                    border: 1px solid white;
+                                    border-top: none;
+                                }
+                                &:nth-child(3){
+                                    border-top: 1px solid white;
+                                }
+                                &:hover{
+                                    background-color: $color_blue;
+                                    a{
+                                        color: $color_green;
+                                    }
+                                }
                             }
                         }
                     }
@@ -2745,8 +3005,8 @@ $color_menu_border: #2ab06d;
                     text-align: center;
                     display: table;
                     .ico{
-                        height: 140px;
-                        margin: 10px 0;
+                        height: 100px;
+                        margin: 30px 0;
                         background-size: contain;
                     }
 
@@ -3027,8 +3287,8 @@ $color_menu_border: #2ab06d;
                     text-align: center;
                     display: table;
                     .ico{
-                        height: 140px;
-                        margin: 10px 0;
+                        height: 100px;
+                        margin: 30px 0;
                         background-size: contain;
                     }
 

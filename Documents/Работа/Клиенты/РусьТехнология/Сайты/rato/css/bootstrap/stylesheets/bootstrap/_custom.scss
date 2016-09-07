@@ -281,6 +281,7 @@ $color_menu_border: #2ab06d;
                                     padding-right: 30px;
                                 }
                                 .mid{
+                                    text-transform: uppercase;
                                     font-size: 9em;
                                     color: white;
                                     font-weight: 600;
@@ -809,6 +810,9 @@ $color_menu_border: #2ab06d;
                 &:hover{
                     background-color: $color_green;
                 }
+                &.active{
+                    background-color: $color_green;
+                }
                 a{
                     display: block;
                     text-indent: -3px;
@@ -829,9 +833,15 @@ $color_menu_border: #2ab06d;
                 }
                 &.prev{
                     background: url('../images/pagi-prev.png') no-repeat center center;
+                    &:hover{
+                        background: url('../images/act-prev-a.png') no-repeat center center;
+                    }
                 }
                 &.next{
                     background: url('../images/pagi-next.png') no-repeat center center;
+                    &:hover{
+                        background: url('../images/act-next-a.png') no-repeat center center;
+                    }
                 }
                 &.start, &.end{
                     border-radius: 0;
@@ -840,6 +850,7 @@ $color_menu_border: #2ab06d;
                     cursor: pointer;
                     &:hover{
                         background: none;
+                        color: $color_green;
                     }
                 }
             }
@@ -1027,6 +1038,7 @@ $color_menu_border: #2ab06d;
                     background: url('../images/act-all.png') no-repeat left center;
                     &:hover{
                         background: url('../images/act-all-a.png') no-repeat left center;
+                        background-size: contain;
                     }
                 }
             }
@@ -1040,6 +1052,7 @@ $color_menu_border: #2ab06d;
                     background: url('../images/act-prev.png') no-repeat left center;
                     &:hover{
                         background: url('../images/act-prev-a.png') no-repeat left center;
+                        background-size: contain;
                     }
                 }
                 .next{
@@ -1048,6 +1061,7 @@ $color_menu_border: #2ab06d;
                     background: url('../images/act-next.png') no-repeat right center;
                     &:hover{
                         background: url('../images/act-next-a.png') no-repeat right center;
+                        background-size: contain;
                     }
                 }
             }
@@ -1756,6 +1770,27 @@ $color_menu_border: #2ab06d;
                         }
                     }
                 }
+                .submitted{
+                    margin: 100px auto;
+                    width: 640px;
+                    height: 280px;
+                    background: url('../images/submitted.png') no-repeat center center;
+                    background-color: $color_orange;
+                    .response{
+                        display: table;
+                        height: 100%;
+                        width: 100%;
+                        .text{
+                            display: table-cell;
+                            color: white;
+                            font-size: 23px;
+                            font-weight: bold;    
+                            text-align: center;
+                            vertical-align: middle;
+                            text-indent: 70px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -1763,7 +1798,22 @@ $color_menu_border: #2ab06d;
 
 @media (max-width: $screen-xs-max) {
     body{
-
+        .copyright{
+            .container{
+                .col-sm-4{
+                    margin: 7.5px 0 15px;
+                    font-size: 10px;
+                    line-height: 1.4em;
+                    text-align: center;
+                    &:last-child{
+                        display: none;
+                    }
+                    &:first-child{
+                        margin: 15px 0 7.5px;
+                    }
+                }
+            }
+        }
         &.has-modal{
             #modal-form{
                 .form{
@@ -1833,6 +1883,23 @@ $color_menu_border: #2ab06d;
                                 margin-top: 30px;
                                 text-align: center;
                             }
+                        }
+                    }
+                }
+
+                .submitted{
+                    margin: 30px auto;
+                    background-image: none;
+                    width: 290px;
+                    height: 190px;
+                    .response{
+                        width: 260px;
+                        margin: 15px;
+                        background: url('../images/submitted.png') no-repeat center center;
+                        background-size: contain;
+                        .text{
+                            font-size: 16px;
+                            text-indent: 50px;
                         }
                     }
                 }
@@ -2277,7 +2344,8 @@ $color_menu_border: #2ab06d;
             >.container{
                 .desc{
                     font-size: 15px;
-                    padding: 23px 0;
+                    padding: 23px 15px;
+                    margin: 0 -15px;
                 }  
             }
             .gray-bg{
@@ -2482,6 +2550,7 @@ $color_menu_border: #2ab06d;
                         .left-side{
                             height: 150px;
                             padding-right: 0;
+                            margin-top: 20px;
                             .normal{
                                 .top{
                                     font-size: 2em;
@@ -2510,7 +2579,7 @@ $color_menu_border: #2ab06d;
                                 color: white;
                                 float: right;
                                 font-weight: 600;
-                                font-size: 2.3em; 
+                                font-size: 2em; 
                             }
                         }
                         .right-side{
@@ -2781,8 +2850,100 @@ $color_menu_border: #2ab06d;
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     body{
-
-
+        .slider{
+            .slider-actions{
+                display: none;
+            }
+        }
+        .invers{
+            .paginator{
+                li{
+                    &.start{
+                        width: 24px;
+                        background: url("../images/pagi-prev-w.png") repeat-x scroll left center;
+                        text-indent: 100%;
+                        overflow: hidden;
+                        &:hover{
+                            width: 24px;
+                            background: url("../images/pagi-prev-w.png") repeat-x scroll left center;
+                            text-indent: 100%;
+                            overflow: hidden;
+                        }
+                    }
+                    &.end{
+                        width: 22px;
+                        background: url("../images/pagi-next-w.png") repeat-x scroll right center;
+                        text-indent: 100%;
+                        overflow: hidden;
+                        &:hover{
+                            width: 22px;
+                            background: url("../images/pagi-next-w.png") repeat-x scroll right center;
+                            text-indent: 100%;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        .paginator{
+            li{
+                &.start{
+                    width: 24px;
+                    background: url("../images/pagi-prev.png") repeat-x scroll left center;
+                    text-indent: 100%;
+                    overflow: hidden;
+                    &:hover{
+                        width: 24px;
+                        background: url("../images/pagi-prev.png") repeat-x scroll left center;
+                        text-indent: 100%;
+                        overflow: hidden;
+                    }
+                }
+                &.end{
+                    width: 22px;
+                    background: url("../images/pagi-next.png") repeat-x scroll right center;
+                    text-indent: 100%;
+                    overflow: hidden;
+                    &:hover{
+                        width: 22px;
+                        background: url("../images/pagi-next.png") repeat-x scroll right center;
+                        text-indent: 100%;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+        h1,h2,h3{
+            font-size: 3.5em;
+        }
+        .activity{
+            width: auto;
+            font-size: 26px;
+        }
+        .invite {
+            .service-list {
+                .services-list{
+                    margin: 15px 30px 0;
+                }
+            }
+        }
+        .page-head{
+            .discount-info{
+                margin: 25px 0;
+                .discount-image{
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+                .discount-text{
+                    p{
+                        font-size: 14px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
         .emex{
             a{
                 display: block;
@@ -3092,7 +3253,7 @@ $color_menu_border: #2ab06d;
                             .normal{
                                 .top{
                                     font-size: 3.75em;
-                                    padding-right: 30px;
+                                    padding-right: 10px;
                                 }
                                 .mid{
                                     font-size: 7em;

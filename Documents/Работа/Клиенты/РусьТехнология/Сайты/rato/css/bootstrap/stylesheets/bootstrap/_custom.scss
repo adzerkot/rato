@@ -2158,6 +2158,7 @@ $color_menu_border: #2ab06d;
                 display: table;
                 h1{
                     display: table-cell;
+                    text-align: left;
                     font-size: 21px;
                     height: 55px;
                     line-height: 22.5px;
@@ -2356,8 +2357,9 @@ $color_menu_border: #2ab06d;
                             margin-top: 0;
                             tr{
                                 th{
-                                    font-size: 13px;    
-                                    padding: 8px 23px;
+                                    font-size: 13px;
+                                    line-height: 15px;
+                                    padding: 15px 23px;
                                     vertical-align: middle;
                                 }
                                 td{
@@ -2865,7 +2867,7 @@ $color_menu_border: #2ab06d;
                         overflow: hidden;
                         &:hover{
                             width: 24px;
-                            background: url("../images/pagi-prev-w.png") repeat-x scroll left center;
+                            background: url("../images/act-prev-a.png") repeat-x scroll left center;
                             text-indent: 100%;
                             overflow: hidden;
                         }
@@ -2877,7 +2879,7 @@ $color_menu_border: #2ab06d;
                         overflow: hidden;
                         &:hover{
                             width: 22px;
-                            background: url("../images/pagi-next-w.png") repeat-x scroll right center;
+                            background: url("../images/act-next-a.png") repeat-x scroll right center;
                             text-indent: 100%;
                             overflow: hidden;
                         }
@@ -2894,7 +2896,7 @@ $color_menu_border: #2ab06d;
                     overflow: hidden;
                     &:hover{
                         width: 24px;
-                        background: url("../images/pagi-prev.png") repeat-x scroll left center;
+                        background: url("../images/act-prev-a.png") repeat-x scroll left center;
                         text-indent: 100%;
                         overflow: hidden;
                     }
@@ -2906,7 +2908,7 @@ $color_menu_border: #2ab06d;
                     overflow: hidden;
                     &:hover{
                         width: 22px;
-                        background: url("../images/pagi-next.png") repeat-x scroll right center;
+                        background: url("../images/act-next-a.png") repeat-x scroll right center;
                         text-indent: 100%;
                         overflow: hidden;
                     }

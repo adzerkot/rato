@@ -303,12 +303,17 @@ $color_menu_border: #2ab06d;
                             .rotated{      
                                 margin-left: 10px;
                                 padding-top: 0.25em;
-                                writing-mode:tb-rl;
+                                @include transform (90deg, 0);
                                 width: 70px;
                                 color: white;
                                 float: right;
                                 font-weight: 600;
                                 font-size: 5em; 
+                                -moz-transform: rotate(90deg); /* Для Firefox */
+                                -ms-transform: rotate(90deg); /* Для IE */
+                                -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+                                -o-transform: rotate(90deg); /* Для Opera */
+                                transform: rotate(90deg);
                             }
                         }
                         .right-side{
@@ -849,6 +854,11 @@ $color_menu_border: #2ab06d;
                     width: auto;
                     cursor: pointer;
                     &:hover{
+                        background: none;
+                        color: $color_green;
+                    }
+                    a{
+                        width: auto;
                         background: none;
                         color: $color_green;
                     }

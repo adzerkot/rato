@@ -1222,6 +1222,7 @@ $color_menu_border: #2ab06d;
             margin-bottom: -150px;
             margin-top: 50px;
             .maaaaaap{
+                overflow: hidden;
                 height: 500px;
                 background: url('../images/cnt-map.jpg') no-repeat center center;
             }
@@ -2046,6 +2047,7 @@ $color_menu_border: #2ab06d;
         .cnt-map{
             height: 250px;
             .maaaaaap{
+                overflow: hidden;
                 position: absolute;
                 z-index: 1;
                 height: 250px;

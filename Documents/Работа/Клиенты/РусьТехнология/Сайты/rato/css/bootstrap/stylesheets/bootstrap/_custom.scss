@@ -1688,7 +1688,7 @@ $color_menu_border: #2ab06d;
         &.has-modal{
             overflow: hidden;
             #modal-form{
-                z-index: 10;
+                z-index: 1002;
                 display: block;
                 background-color: rgba(5,56,86,.6);
                 position: fixed;
@@ -2586,7 +2586,6 @@ $color_menu_border: #2ab06d;
                             .rotated{      
                                 margin-left: 0;
                                 padding-top: 0.25em;
-                                writing-mode:tb-rl;
                                 width: 30px;
                                 color: white;
                                 float: right;
@@ -3286,7 +3285,6 @@ $color_menu_border: #2ab06d;
                             .rotated{      
                                 margin-left: 10px;
                                 padding-top: 0.25em;
-                                writing-mode:tb-rl;
                                 width: 50px;
                                 color: white;
                                 float: right;
